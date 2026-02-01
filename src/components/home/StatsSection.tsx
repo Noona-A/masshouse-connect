@@ -5,7 +5,7 @@ const stats = [
   { value: "336", label: "Apartments", icon: Home },
   { value: "190", label: "RTM Members", icon: Users },
   { value: "2", label: "Buildings", icon: Building2 },
-  { value: "2024", label: "Est.", icon: Calendar },
+  { value: "2026", label: "Est.", icon: Calendar },
 ];
 
 const StatsSection = () => {

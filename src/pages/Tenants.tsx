@@ -36,8 +36,8 @@ const buildingRules = [
   },
   {
     icon: Recycle,
-    title: "Waste & Recycling",
-    description: "Bin collections on Tuesdays and Fridays. Use designated bin areas and sort waste correctly.",
+    title: "Waste Collection",
+    description: "Bin collections every Monday and Thursday. Use designated bin areas for general waste.",
   },
 ];
 
@@ -46,10 +46,10 @@ const practicalInfo = [
     icon: Recycle,
     title: "Bin Collection",
     details: [
-      "General waste: Every Tuesday",
-      "Recycling: Every Friday",
+      "Collection days: Every Monday and Thursday",
       "Bulky items: Contact council for collection",
       "Put bins out by 7am on collection day",
+      "Use designated bin areas only",
     ],
   },
   {

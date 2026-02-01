@@ -24,7 +24,7 @@ const ContactsSection = () => {
             title="RTM Directors"
             subtitle="Governance & strategy"
             icon={Users}
-            email="directors@masshouse-rtm.co.uk"
+            email="support@masshousertm.co.uk"
             hours="Board meets monthly"
           />
           

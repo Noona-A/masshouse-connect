@@ -22,7 +22,7 @@ const HeroSection = () => {
           {/* Location Badge */}
           <div className="mt-6 inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-primary-foreground/90">
             <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-            2 & 7 Masshouse Plaza, Birmingham • Near HS2
+            2 & 7 Masshouse Plaza, Birmingham
           </div>
 
           {/* CTA Buttons */}
@@ -34,7 +34,7 @@ const HeroSection = () => {
               </Button>
             </Link>
             <Link to="/leaseholders">
-              <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-semibold">
+              <Button size="lg" variant="outline" className="border-primary-foreground/50 bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20 font-semibold">
                 <PoundSterling className="mr-2 h-5 w-5" />
                 Service Charge Info
               </Button>

@@ -5,24 +5,17 @@ import { Button } from "@/components/ui/button";
 const newsItems = [
   {
     id: 1,
-    title: "Welcome to the New Masshouse RTM Website",
-    date: "January 2025",
-    excerpt: "We're excited to launch our new website, providing residents with easy access to important information and services.",
-    category: "General",
-  },
-  {
-    id: 2,
-    title: "Board Meeting Summary - January 2025",
-    date: "January 2025",
-    excerpt: "Key decisions from our latest board meeting including security improvements and budget planning for the year ahead.",
+    title: "Handover Discussion Meeting Scheduled",
+    date: "January 2026",
+    excerpt: "A crucial meeting has been scheduled between the freeholder, management agent, RTM directors, and solicitors to discuss the granting of Right to Manage and the timeline for handover.",
     category: "Meeting",
   },
   {
-    id: 3,
-    title: "Planned Security Enhancement Coming Soon",
-    date: "January 2025",
-    excerpt: "We're working on improving security coverage across both buildings. More details to follow.",
-    category: "Works",
+    id: 2,
+    title: "Right to Manage Claim Notice Served",
+    date: "September 2025",
+    excerpt: "The RTM Company has formally served the claim notice for Right to Manage on all relevant parties, marking a significant step forward in our campaign.",
+    category: "Notice",
   },
 ];
 
@@ -68,7 +61,7 @@ const NewsSection = () => {
                   {item.excerpt}
                 </p>
                 <Link 
-                  to={`/news/${item.id}`}
+                  to="/news"
                   className="text-sm font-medium text-primary hover:text-primary/80 inline-flex items-center gap-1"
                 >
                   Read More

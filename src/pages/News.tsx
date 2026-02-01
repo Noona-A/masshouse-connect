@@ -116,14 +116,6 @@ const News = () => {
                         <p className="text-muted-foreground mb-4">
                           {item.excerpt}
                         </p>
-                        
-                        <Link 
-                          to={`/news/${item.id}`}
-                          className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-primary/80"
-                        >
-                          Read Full Article
-                          <ArrowRight className="h-4 w-4" />
-                        </Link>
                       </div>
                     </article>
                   ))
