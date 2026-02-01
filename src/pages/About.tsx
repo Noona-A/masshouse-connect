@@ -11,10 +11,11 @@ const benefits = [
 ];
 
 const timeline = [
-  { year: "2022", title: "RTM Campaign Begins", description: "Residents unite to explore Right to Manage options" },
-  { year: "2023", title: "Claim Submitted", description: "Formal RTM claim submitted to the freeholder" },
-  { year: "2024", title: "RTM Achieved", description: "Successfully acquired Right to Manage" },
-  { year: "2025", title: "Professional Partnership", description: "Appointed Moonstone Block Management" },
+  { year: "Jan 2023", title: "Campaign Launch", description: "Residents unite to explore Right to Manage options" },
+  { year: "Aug 2025", title: "Majority Achieved", description: "Majority support secured across both buildings" },
+  { year: "Sep 2025", title: "Claim Notice Submitted", description: "Formal RTM claim notice submitted to the freeholder" },
+  { year: "Jan 2026", title: "Handover Discussions", description: "Met with the freeholder to discuss the handover date" },
+  { year: "2026", title: "RTM Agreement", description: "Freeholder agreed to grant RTM; handover date to be confirmed" },
 ];
 
 const directors = [
