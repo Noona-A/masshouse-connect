@@ -51,13 +51,13 @@ const Contact = () => {
               </p>
               
               <div className="space-y-3">
-                <a href="tel:0121XXXXXXX" className="flex items-center gap-2 text-primary hover:underline">
+                <a href="tel:+441217988444" className="flex items-center gap-2 text-primary hover:underline">
                   <Phone className="h-4 w-4" />
-                  <span className="font-medium">0121 XXX XXXX</span>
+                  <span className="font-medium">0121 798 8444</span>
                 </a>
-                <a href="mailto:info@moonstoneblockmanagement.co.uk" className="flex items-center gap-2 text-muted-foreground hover:text-foreground">
+                <a href="mailto:info@moonstonebm.co.uk" className="flex items-center gap-2 text-muted-foreground hover:text-foreground">
                   <Mail className="h-4 w-4" />
-                  <span className="text-sm">info@moonstoneblockmanagement.co.uk</span>
+                  <span className="text-sm">info@moonstonebm.co.uk</span>
                 </a>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Clock className="h-4 w-4" />
@@ -67,8 +67,10 @@ const Contact = () => {
               
               <div className="mt-4 pt-4 border-t border-border">
                 <p className="text-sm text-muted-foreground">
-                  <strong>Your Property Manager:</strong><br />
-                  [Name to be inserted]
+                  <strong>Address:</strong><br />
+                  Cobalt Square, Second Floor<br />
+                  83-85 Hagley Road, Edgbaston<br />
+                  Birmingham B16 8QG
                 </p>
               </div>
             </div>

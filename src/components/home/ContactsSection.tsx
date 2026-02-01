@@ -15,8 +15,8 @@ const ContactsSection = () => {
             title="Moonstone Block Management"
             subtitle="Day-to-day management"
             icon={Building}
-            phone="0121 XXX XXXX"
-            email="info@moonstoneblockmanagement.co.uk"
+            phone="0121 798 8444"
+            email="info@moonstonebm.co.uk"
             hours="Monday - Friday, 9am - 5pm"
           />
           

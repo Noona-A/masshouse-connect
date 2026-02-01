@@ -1,15 +1,18 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Wrench, PoundSterling, Phone } from "lucide-react";
+import buildingsImage from "@/assets/buildings.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[600px] flex items-center gradient-hero overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-accent rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/50 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
-      </div>
+    <section className="relative min-h-[600px] flex items-center overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${buildingsImage})` }}
+      />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-primary/80" />
       
       <div className="section-container relative z-10 py-16 md:py-24">
         <div className="max-w-3xl">
