@@ -17,12 +17,12 @@ const HeroSection = () => {
             Masshouse RTM Company Limited
           </h1>
           <p className="mt-6 text-xl md:text-2xl text-primary-foreground/90 font-light">Leaseholder-Led Property Management</p>
-          <p className="mt-2 text-lg text-primary-foreground/80">336 Apartments</p>
+          <p className="mt-2 text-lg text-primary-foreground/80">336 Apartments across Masshouse & The Hive</p>
           
           {/* Location Badge */}
-          <div className="mt-6 inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-primary-foreground/90">2 & 7 Masshouse Plaza
-2 & 7 Masshouse Plaza, Birmingham<span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-            Masshouse Plaza, Birmingham • Near HS2
+          <div className="mt-6 inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-primary-foreground/90">
+            <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+            2 & 7 Masshouse Plaza, Birmingham • Near HS2
           </div>
 
           {/* CTA Buttons */}
