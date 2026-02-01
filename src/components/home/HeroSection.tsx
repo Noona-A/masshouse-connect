@@ -20,7 +20,8 @@ const HeroSection = () => {
           <p className="mt-2 text-lg text-primary-foreground/80">336 Apartments</p>
           
           {/* Location Badge */}
-          <div className="mt-6 inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-primary-foreground/90">2 & 7 Masshouse Plaza, Birmingham<span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+          <div className="mt-6 inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-primary-foreground/90">2 & 7 Masshouse Plaza
+2 & 7 Masshouse Plaza, Birmingham<span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
             Masshouse Plaza, Birmingham • Near HS2
           </div>
 
