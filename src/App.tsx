@@ -14,6 +14,10 @@ import Documents from "./pages/Documents";
 import News from "./pages/News";
 import Improvements from "./pages/Improvements";
 import NotFound from "./pages/NotFound";
+import BookParking from "./pages/BookParking";
+import CheckIssueStatus from "./pages/CheckIssueStatus";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
 
 const queryClient = new QueryClient();
 
@@ -31,9 +35,13 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/report-issue" element={<ReportIssue />} />
+          <Route path="/book-parking" element={<BookParking />} />
+          <Route path="/check-issue-status" element={<CheckIssueStatus />} />
           <Route path="/documents" element={<Documents />} />
           <Route path="/news" element={<News />} />
           <Route path="/improvements" element={<Improvements />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin" element={<AdminDashboard />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
