@@ -5,8 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Use subdirectory path only in production (GitHub Pages), root path in development
-  base: mode === "production" ? "/masshouse-connect/" : "/",
+  // Use root path for custom domain
+  base: "/",
   server: {
     host: "::",
     port: 8080,
