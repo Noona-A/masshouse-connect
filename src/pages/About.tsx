@@ -80,7 +80,7 @@ const About = () => {
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold">Our Story</h2>
-            <p className="mt-2 text-muted-foreground">The journey to resident-led management</p>
+            <p className="mt-2 text-muted-foreground">The journey to leaseholder-led management</p>
           </div>
 
           <div className="max-w-4xl mx-auto">
@@ -123,7 +123,7 @@ const About = () => {
               <Users className="h-8 w-8 text-primary" />
             </div>
             <h2 className="text-2xl md:text-3xl font-bold">Meet Your Directors</h2>
-            <p className="mt-2 text-muted-foreground">Elected by fellow residents to represent your interests</p>
+            <p className="mt-2 text-muted-foreground">Elected by fellow leaseholders to represent your interests</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -151,7 +151,7 @@ const About = () => {
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold">How It Works</h2>
-            <p className="mt-2 text-primary-foreground/80">The structure of resident-led management</p>
+            <p className="mt-2 text-primary-foreground/80">The structure of leaseholder-led management</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -159,7 +159,7 @@ const About = () => {
               <div className="w-16 h-16 mx-auto rounded-full bg-primary-foreground/10 flex items-center justify-center mb-4">
                 <Users className="h-8 w-8" />
               </div>
-              <h3 className="font-semibold text-lg mb-2">Residents</h3>
+              <h3 className="font-semibold text-lg mb-2">Leaseholders</h3>
               <p className="text-primary-foreground/80">Elect directors at the AGM and vote on major decisions</p>
               <ArrowRight className="mx-auto mt-4 h-6 w-6 text-accent hidden md:block" />
             </div>
