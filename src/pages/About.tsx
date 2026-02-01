@@ -19,10 +19,12 @@ const timeline = [
 ];
 
 const directors = [
-  { name: "Director Name", role: "Chair", bio: "Brings extensive experience in property management and community leadership." },
-  { name: "Director Name", role: "Treasurer", bio: "Background in finance and accounting, ensuring robust financial oversight." },
-  { name: "Director Name", role: "Secretary", bio: "Experienced in governance and administration, keeping operations running smoothly." },
-  { name: "Director Name", role: "Director", bio: "Passionate about building improvements and resident engagement." },
+  { name: "Henry Carpenter", role: "Chair", bio: "Leads the RTM board and brings extensive experience in property management and community leadership." },
+  { name: "Noor Abduljhbar", role: "IT & Treasurer", bio: "Manages IT systems and financial oversight, ensuring robust accounting and digital operations." },
+  { name: "Mark Hopkins", role: "Secretary", bio: "Experienced in governance and administration, keeping company operations running smoothly." },
+  { name: "Stuart Buchanan", role: "Director", bio: "Passionate about building improvements and resident engagement." },
+  { name: "Gary Douglas", role: "Director", bio: "Brings valuable expertise to the board's decision-making processes." },
+  { name: "Bebe Woo", role: "Director", bio: "Committed to enhancing the community and representing leaseholder interests." },
 ];
 
 const About = () => {
