@@ -14,16 +14,232 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      issue_updates: {
+        Row: {
+          created_at: string
+          id: string
+          issue_id: string
+          notes: string | null
+          status: string
+          updated_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          issue_id: string
+          notes?: string | null
+          status: string
+          updated_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          issue_id?: string
+          notes?: string | null
+          status?: string
+          updated_by?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "issue_updates_issue_id_fkey"
+            columns: ["issue_id"]
+            isOneToOne: false
+            referencedRelation: "issues"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      issues: {
+        Row: {
+          category: string
+          created_at: string
+          description: string
+          flat_number: string
+          id: string
+          issue_type: string
+          location: string
+          photo_urls: string[] | null
+          reference_number: string
+          resident_email: string
+          resident_name: string
+          resident_phone: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          description: string
+          flat_number: string
+          id?: string
+          issue_type: string
+          location: string
+          photo_urls?: string[] | null
+          reference_number: string
+          resident_email: string
+          resident_name: string
+          resident_phone?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string
+          flat_number?: string
+          id?: string
+          issue_type?: string
+          location?: string
+          photo_urls?: string[] | null
+          reference_number?: string
+          resident_email?: string
+          resident_name?: string
+          resident_phone?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      parking_bookings: {
+        Row: {
+          admin_notes: string | null
+          approved_by: string | null
+          booking_reference: string
+          created_at: string
+          end_time: string
+          flat_number: string
+          guest_name: string
+          id: string
+          parking_space_id: string | null
+          resident_email: string
+          resident_name: string
+          resident_phone: string | null
+          special_requirements: string | null
+          start_time: string
+          status: string
+          updated_at: string
+          vehicle_registration: string
+        }
+        Insert: {
+          admin_notes?: string | null
+          approved_by?: string | null
+          booking_reference: string
+          created_at?: string
+          end_time: string
+          flat_number: string
+          guest_name: string
+          id?: string
+          parking_space_id?: string | null
+          resident_email: string
+          resident_name: string
+          resident_phone?: string | null
+          special_requirements?: string | null
+          start_time: string
+          status?: string
+          updated_at?: string
+          vehicle_registration: string
+        }
+        Update: {
+          admin_notes?: string | null
+          approved_by?: string | null
+          booking_reference?: string
+          created_at?: string
+          end_time?: string
+          flat_number?: string
+          guest_name?: string
+          id?: string
+          parking_space_id?: string | null
+          resident_email?: string
+          resident_name?: string
+          resident_phone?: string | null
+          special_requirements?: string | null
+          start_time?: string
+          status?: string
+          updated_at?: string
+          vehicle_registration?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "parking_bookings_parking_space_id_fkey"
+            columns: ["parking_space_id"]
+            isOneToOne: false
+            referencedRelation: "parking_spaces"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      parking_spaces: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          is_active: boolean
+          space_number: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          is_active?: boolean
+          space_number: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          is_active?: boolean
+          space_number?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      check_parking_availability: {
+        Args: {
+          p_end_time: string
+          p_exclude_booking_id?: string
+          p_space_id: string
+          p_start_time: string
+        }
+        Returns: boolean
+      }
+      generate_issue_reference: { Args: never; Returns: string }
+      generate_parking_reference: { Args: never; Returns: string }
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
+      is_admin: { Args: never; Returns: boolean }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "manager"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +366,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "manager"],
+    },
   },
 } as const
