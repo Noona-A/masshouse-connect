@@ -13,23 +13,13 @@ import {
 } from "@/components/ui/select";
 
 const documents = [
-  { id: 1, title: "Board Meeting Minutes - January 2025", category: "Governance", type: "Minutes", date: "2025-01-20" },
-  { id: 2, title: "Annual Budget 2025", category: "Financial", type: "Budget", date: "2024-12-15" },
-  { id: 3, title: "Service Charge Demand 2025", category: "Financial", type: "Demand", date: "2025-01-01" },
-  { id: 4, title: "Building Insurance Certificate 2024-25", category: "Legal", type: "Certificate", date: "2024-04-01" },
-  { id: 5, title: "Fire Risk Assessment 2024", category: "Health & Safety", type: "Assessment", date: "2024-06-15" },
-  { id: 6, title: "Annual Accounts 2024", category: "Financial", type: "Accounts", date: "2024-12-01" },
-  { id: 7, title: "Board Meeting Minutes - December 2024", category: "Governance", type: "Minutes", date: "2024-12-18" },
-  { id: 8, title: "Resident Handbook 2025", category: "Operational", type: "Handbook", date: "2025-01-01" },
-  { id: 9, title: "Articles of Association", category: "Governance", type: "Legal", date: "2024-01-01" },
-  { id: 10, title: "Board Meeting Minutes - November 2024", category: "Governance", type: "Minutes", date: "2024-11-20" },
-  { id: 11, title: "Health & Safety Policy", category: "Health & Safety", type: "Policy", date: "2024-03-01" },
-  { id: 12, title: "Complaints Procedure", category: "Governance", type: "Policy", date: "2024-01-01" },
+  { id: 1, title: "Masshouse Building Brochure", category: "Building Information", type: "Brochure", date: "2026-02-01", url: "/documents/Masshouse Brochures.pdf" },
+  { id: 2, title: "The Hive Building Brochure", category: "Building Information", type: "Brochure", date: "2026-02-01", url: "/documents/Hive brochure.pdf" },
 ];
 
-const categories = ["All Categories", "Governance", "Financial", "Legal", "Health & Safety", "Operational"];
-const years = ["All Years", "2025", "2024", "2023"];
-const types = ["All Types", "Minutes", "Accounts", "Budget", "Policy", "Certificate", "Assessment", "Demand", "Handbook", "Legal"];
+const categories = ["All Categories", "Building Information"];
+const years = ["All Years", "2026"];
+const types = ["All Types", "Brochure"];
 
 const Documents = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -180,7 +170,12 @@ const Documents = () => {
                           {new Date(doc.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
                         </td>
                         <td className="px-4 py-4 text-right">
-                          <Button variant="outline" size="sm" className="gap-2">
+                          <Button 
+                            variant="outline" 
+                            size="sm" 
+                            className="gap-2"
+                            onClick={() => window.open(doc.url, '_blank')}
+                          >
                             <Download className="h-4 w-4" />
                             <span className="hidden sm:inline">Download</span>
                           </Button>
