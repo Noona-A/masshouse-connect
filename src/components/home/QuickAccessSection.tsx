@@ -1,13 +1,13 @@
-import { FileText, ClipboardList, HardHat, HelpCircle, Phone, KeyRound } from "lucide-react";
+import { FileText, ClipboardList, HardHat, HelpCircle, Car, AlertTriangle, Gauge, KeyRound } from "lucide-react";
 import QuickAccessCard from "@/components/ui/QuickAccessCard";
 
 const quickLinks = [
+  { title: "Report an Issue", description: "Log a problem", icon: AlertTriangle, href: "/report-issue" },
+  { title: "Book Parking", description: "Guest parking", icon: Car, href: "/book-parking" },
+  { title: "Meter Readings", description: "Request a reading", icon: Gauge, href: "/meter-readings" },
+  { title: "Planned Works", description: "Upcoming projects", icon: HardHat, href: "/improvements" },
   { title: "Pay Service Charge", description: "View payment details", icon: FileText, href: "/leaseholders#payment" },
   { title: "Meeting Minutes", description: "Board decisions", icon: ClipboardList, href: "/documents?type=minutes" },
-  { title: "Planned Works", description: "Upcoming projects", icon: HardHat, href: "/improvements" },
-  { title: "FAQs", description: "Common questions", icon: HelpCircle, href: "/faq" },
-  { title: "Contact Us", description: "Get in touch", icon: Phone, href: "/contact" },
-  { title: "Building Access", description: "Keys & fobs", icon: KeyRound, href: "/tenants#access" },
 ];
 
 const QuickAccessSection = () => {
