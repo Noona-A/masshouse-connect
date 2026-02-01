@@ -105,11 +105,8 @@ const Contact = () => {
               <div className="mt-4 pt-4 border-t border-border">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Clock className="h-4 w-4" />
-                  <span>Board meets monthly (15th)</span>
+                  <span>Board meets monthly</span>
                 </div>
-                <p className="text-sm text-muted-foreground mt-2">
-                  <strong>Next AGM:</strong> April 2025 (TBC)
-                </p>
               </div>
             </div>
 
@@ -183,39 +180,37 @@ const Contact = () => {
             <MapPin className="h-6 w-6 text-primary shrink-0" />
             <div>
               <h2 className="text-2xl font-bold">Location</h2>
-              <p className="text-muted-foreground">Masshouse Plaza, Birmingham B5 5JR</p>
+              <p className="text-muted-foreground">Masshouse Plaza, Birmingham</p>
             </div>
           </div>
           
-          <div className="bg-muted rounded-lg h-80 flex items-center justify-center border border-border">
-            <div className="text-center">
-              <MapPin className="h-12 w-12 text-muted-foreground mx-auto mb-3" />
-              <p className="text-muted-foreground">Map embed would go here</p>
-              <a 
-                href="https://maps.google.com/?q=Masshouse+Plaza+Birmingham" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary hover:underline inline-flex items-center gap-1 mt-2"
-              >
-                View on Google Maps
-                <ExternalLink className="h-4 w-4" />
-              </a>
-            </div>
+          <div className="rounded-lg overflow-hidden border border-border">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2429.8!2d-1.8897!3d52.4789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870bc87f8a7f7f9%3A0x8f7c5e5f5e5f5e5f!2sMasshouse%2C%20Birmingham!5e0!3m2!1sen!2suk!4v1234567890"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Masshouse Location"
+            ></iframe>
           </div>
           
           <div className="mt-8 grid md:grid-cols-2 gap-6">
             <div className="bg-card rounded-lg p-6 border border-border">
               <h3 className="font-semibold mb-3">The Masshouse Building</h3>
               <p className="text-muted-foreground text-sm">
-                Flats 1-200<br />
-                Masshouse Plaza, Birmingham B5 5JR
+                Apartments 101-1404<br />
+                2 Masshouse Plaza, Birmingham
               </p>
             </div>
             <div className="bg-card rounded-lg p-6 border border-border">
               <h3 className="font-semibold mb-3">The Hive Building</h3>
               <p className="text-muted-foreground text-sm">
-                Flats 201-336<br />
-                Masshouse Plaza, Birmingham B5 5JR
+                Apartments 1-5: 8 Masshouse Plaza<br />
+                Apartments 101-1411: 7 Masshouse Plaza<br />
+                Birmingham
               </p>
             </div>
           </div>

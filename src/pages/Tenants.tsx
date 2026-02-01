@@ -59,7 +59,6 @@ const practicalInfo = [
       "Allocated spaces for residents only",
       "Visitor parking available in designated areas",
       "Display valid permit at all times",
-      "Electric charging points in car park",
     ],
   },
   {
@@ -68,7 +67,6 @@ const practicalInfo = [
     details: [
       "Secure bike stores in basement level",
       "Access via your key fob",
-      "Register your bike with building management",
       "Do not store bikes in communal corridors",
     ],
   },
@@ -77,7 +75,7 @@ const practicalInfo = [
     title: "Parcels & Deliveries",
     details: [
       "Concierge accepts parcels during staffed hours",
-      "Parcel lockers available for 24/7 collection",
+      "Parcel lockers coming soon",
       "Large items delivered to your floor",
       "Collect within 7 days",
     ],
