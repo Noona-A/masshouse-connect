@@ -41,21 +41,21 @@ const bankDetails = {
   reference: "Your flat number (e.g., M123 or H234)"
 };
 const importantDates = [{
-  date: "1st April",
+  date: "To be decided",
   event: "Financial Year Start",
   note: "Annual budget begins"
 }, {
-  date: "1st April & 1st October",
+  date: "To be decided",
   event: "Service Charge Due",
   note: "Bi-annual payments"
 }, {
-  date: "April 2025",
+  date: "To be decided",
   event: "Annual General Meeting",
-  note: "Date TBC"
+  note: "Date to be confirmed"
 }, {
-  date: "15th of each month",
+  date: "To be decided",
   event: "Board Meetings",
-  note: "Open to observers"
+  note: "Schedule to be confirmed"
 }];
 const faqs = [{
   question: "Why do I pay service charge?",
