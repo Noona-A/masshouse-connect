@@ -1,89 +1,96 @@
 import Layout from "@/components/layout/Layout";
 import PageHero from "@/components/ui/PageHero";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { 
-  Building, Shield, Brush, Wrench, Flame, Lightbulb, Wallet, 
-  Copy, Calendar, FileText, Download, HelpCircle, ChevronDown
-} from "lucide-react";
+import { Building, Shield, Brush, Wrench, Flame, Lightbulb, Wallet, Copy, Calendar, FileText, Download, HelpCircle, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { toast } from "@/hooks/use-toast";
-
-const serviceChargeItems = [
-  { icon: Building, label: "Building Management", description: "Professional management services" },
-  { icon: Shield, label: "Security & Concierge", description: "24/7 security presence" },
-  { icon: Brush, label: "Cleaning", description: "Daily communal area cleaning" },
-  { icon: Wrench, label: "Maintenance", description: "Repairs and upkeep" },
-  { icon: Flame, label: "Insurance", description: "Buildings insurance" },
-  { icon: Lightbulb, label: "Utilities", description: "Communal electricity & water" },
-  { icon: Wallet, label: "Reserve Fund", description: "Future major works" },
-];
-
+const serviceChargeItems = [{
+  icon: Building,
+  label: "Building Management",
+  description: "Professional management services"
+}, {
+  icon: Shield,
+  label: "Security & Concierge",
+  description: "24/7 security presence"
+}, {
+  icon: Brush,
+  label: "Cleaning",
+  description: "Daily communal area cleaning"
+}, {
+  icon: Wrench,
+  label: "Maintenance",
+  description: "Repairs and upkeep"
+}, {
+  icon: Flame,
+  label: "Insurance",
+  description: "Buildings insurance"
+}, {
+  icon: Lightbulb,
+  label: "Utilities",
+  description: "Communal electricity & water"
+}, {
+  icon: Wallet,
+  label: "Reserve Fund",
+  description: "Future major works"
+}];
 const bankDetails = {
   accountName: "Masshouse RTM Company Limited",
   sortCode: "XX-XX-XX",
   accountNumber: "XXXXXXXX",
-  reference: "Your flat number (e.g., M123 or H234)",
+  reference: "Your flat number (e.g., M123 or H234)"
 };
-
-const importantDates = [
-  { date: "1st April", event: "Financial Year Start", note: "Annual budget begins" },
-  { date: "1st April & 1st October", event: "Service Charge Due", note: "Bi-annual payments" },
-  { date: "April 2025", event: "Annual General Meeting", note: "Date TBC" },
-  { date: "15th of each month", event: "Board Meetings", note: "Open to observers" },
-];
-
-const faqs = [
-  {
-    question: "Why do I pay service charge?",
-    answer: "Service charge covers the cost of maintaining and managing the communal areas of the building, including cleaning, security, repairs, insurance, and building a reserve fund for future major works."
-  },
-  {
-    question: "How is my service charge calculated?",
-    answer: "Your service charge is calculated based on your flat's share of the total budget, typically determined by the size of your property as stated in your lease."
-  },
-  {
-    question: "Can the service charge increase?",
-    answer: "Yes, service charges can change annually based on actual costs and planned works. We aim to provide value while maintaining the buildings to a high standard."
-  },
-  {
-    question: "What if I can't afford to pay?",
-    answer: "Please contact Moonstone Block Management as soon as possible. We understand circumstances can change and can discuss payment arrangements."
-  },
-  {
-    question: "What happens if I don't pay?",
-    answer: "Unpaid service charges accrue interest and can become a charge on your property. In serious cases, legal action may be taken. Please communicate with us if you're struggling."
-  },
-  {
-    question: "Can I challenge the service charge?",
-    answer: "Yes, you have the right to request a summary of costs and challenge unreasonable charges through the First-tier Tribunal (Property Chamber)."
-  },
-];
-
+const importantDates = [{
+  date: "1st April",
+  event: "Financial Year Start",
+  note: "Annual budget begins"
+}, {
+  date: "1st April & 1st October",
+  event: "Service Charge Due",
+  note: "Bi-annual payments"
+}, {
+  date: "April 2025",
+  event: "Annual General Meeting",
+  note: "Date TBC"
+}, {
+  date: "15th of each month",
+  event: "Board Meetings",
+  note: "Open to observers"
+}];
+const faqs = [{
+  question: "Why do I pay service charge?",
+  answer: "Service charge covers the cost of maintaining and managing the communal areas of the building, including cleaning, security, repairs, insurance, and building a reserve fund for future major works."
+}, {
+  question: "How is my service charge calculated?",
+  answer: "Your service charge is calculated based on your flat's share of the total budget, typically determined by the size of your property as stated in your lease."
+}, {
+  question: "Can the service charge increase?",
+  answer: "Yes, service charges can change annually based on actual costs and planned works. We aim to provide value while maintaining the buildings to a high standard."
+}, {
+  question: "What if I can't afford to pay?",
+  answer: "Please contact Moonstone Block Management as soon as possible. We understand circumstances can change and can discuss payment arrangements."
+}, {
+  question: "What happens if I don't pay?",
+  answer: "Unpaid service charges accrue interest and can become a charge on your property. In serious cases, legal action may be taken. Please communicate with us if you're struggling."
+}, {
+  question: "Can I challenge the service charge?",
+  answer: "Yes, you have the right to request a summary of costs and challenge unreasonable charges through the First-tier Tribunal (Property Chamber)."
+}];
 const Leaseholders = () => {
   const copyToClipboard = (text: string, label: string) => {
     navigator.clipboard.writeText(text);
     toast({
       title: "Copied!",
-      description: `${label} copied to clipboard`,
+      description: `${label} copied to clipboard`
     });
   };
-
-  return (
-    <Layout>
-      <PageHero
-        title="Information for Leaseholders"
-        subtitle="Everything you need to know about service charges, payments, and your responsibilities"
-        breadcrumbs={[
-          { label: "Home", path: "/" },
-          { label: "Leaseholders" },
-        ]}
-      />
+  return <Layout>
+      <PageHero title="Information for Leaseholders" subtitle="Everything you need to know about service charges, payments, and your responsibilities" breadcrumbs={[{
+      label: "Home",
+      path: "/"
+    }, {
+      label: "Leaseholders"
+    }]} />
 
       <section className="section-padding">
         <div className="section-container">
@@ -119,11 +126,7 @@ const Leaseholders = () => {
 
                 <h3 className="text-lg font-semibold mb-4">What Your Service Charge Covers</h3>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-                  {serviceChargeItems.map((item) => (
-                    <div 
-                      key={item.label}
-                      className="flex items-start gap-3 p-4 bg-card rounded-lg border border-border"
-                    >
+                  {serviceChargeItems.map(item => <div key={item.label} className="flex items-start gap-3 p-4 bg-card rounded-lg border border-border">
                       <div className="shrink-0 w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
                         <item.icon className="h-5 w-5 text-primary" />
                       </div>
@@ -131,8 +134,7 @@ const Leaseholders = () => {
                         <h4 className="font-medium">{item.label}</h4>
                         <p className="text-sm text-muted-foreground">{item.description}</p>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
 
                 <div className="bg-accent/10 border border-accent/30 rounded-lg p-6">
@@ -140,8 +142,7 @@ const Leaseholders = () => {
                   <p className="text-muted-foreground mb-4">
                     Service charge rates vary by apartment size and location. Please refer to your service charge demand letter or contact Moonstone Block Management for your specific amount.
                   </p>
-                  <p className="text-sm text-muted-foreground">
-                    <strong>Payment Schedule:</strong> Bi-annual (1st April and 1st October)
+                  <p className="text-sm text-muted-foreground">Payment Schedule: Quarterly billing<strong>Payment Schedule:</strong> Bi-annual (1st April and 1st October)
                   </p>
                 </div>
               </div>
@@ -159,11 +160,7 @@ const Leaseholders = () => {
                       <span className="text-muted-foreground">Account Name</span>
                       <div className="flex items-center gap-2">
                         <span className="font-medium">{bankDetails.accountName}</span>
-                        <Button 
-                          variant="ghost" 
-                          size="sm"
-                          onClick={() => copyToClipboard(bankDetails.accountName, "Account name")}
-                        >
+                        <Button variant="ghost" size="sm" onClick={() => copyToClipboard(bankDetails.accountName, "Account name")}>
                           <Copy className="h-4 w-4" />
                         </Button>
                       </div>
@@ -172,11 +169,7 @@ const Leaseholders = () => {
                       <span className="text-muted-foreground">Sort Code</span>
                       <div className="flex items-center gap-2">
                         <span className="font-medium font-mono">{bankDetails.sortCode}</span>
-                        <Button 
-                          variant="ghost" 
-                          size="sm"
-                          onClick={() => copyToClipboard(bankDetails.sortCode, "Sort code")}
-                        >
+                        <Button variant="ghost" size="sm" onClick={() => copyToClipboard(bankDetails.sortCode, "Sort code")}>
                           <Copy className="h-4 w-4" />
                         </Button>
                       </div>
@@ -185,11 +178,7 @@ const Leaseholders = () => {
                       <span className="text-muted-foreground">Account Number</span>
                       <div className="flex items-center gap-2">
                         <span className="font-medium font-mono">{bankDetails.accountNumber}</span>
-                        <Button 
-                          variant="ghost" 
-                          size="sm"
-                          onClick={() => copyToClipboard(bankDetails.accountNumber, "Account number")}
-                        >
+                        <Button variant="ghost" size="sm" onClick={() => copyToClipboard(bankDetails.accountNumber, "Account number")}>
                           <Copy className="h-4 w-4" />
                         </Button>
                       </div>
@@ -290,11 +279,7 @@ const Leaseholders = () => {
                 <h2 className="text-2xl font-bold mb-6">Important Dates</h2>
                 
                 <div className="space-y-4">
-                  {importantDates.map((item, index) => (
-                    <div 
-                      key={index}
-                      className="flex items-start gap-4 p-4 bg-card rounded-lg border border-border"
-                    >
+                  {importantDates.map((item, index) => <div key={index} className="flex items-start gap-4 p-4 bg-card rounded-lg border border-border">
                       <div className="shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
                         <Calendar className="h-6 w-6 text-primary" />
                       </div>
@@ -303,8 +288,7 @@ const Leaseholders = () => {
                         <div className="text-accent font-medium">{item.date}</div>
                         <div className="text-sm text-muted-foreground mt-1">{item.note}</div>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </TabsContent>
@@ -318,17 +302,27 @@ const Leaseholders = () => {
                 </p>
 
                 <div className="space-y-3">
-                  {[
-                    { title: "Service Charge Demand 2025", date: "January 2025", type: "Financial" },
-                    { title: "Annual Budget 2025", date: "December 2024", type: "Financial" },
-                    { title: "Board Meeting Minutes - January 2025", date: "January 2025", type: "Governance" },
-                    { title: "Annual Accounts 2024", date: "December 2024", type: "Financial" },
-                    { title: "Building Insurance Certificate", date: "April 2024", type: "Legal" },
-                  ].map((doc, index) => (
-                    <div 
-                      key={index}
-                      className="flex items-center justify-between p-4 bg-card rounded-lg border border-border hover:border-primary/30 transition-colors"
-                    >
+                  {[{
+                  title: "Service Charge Demand 2025",
+                  date: "January 2025",
+                  type: "Financial"
+                }, {
+                  title: "Annual Budget 2025",
+                  date: "December 2024",
+                  type: "Financial"
+                }, {
+                  title: "Board Meeting Minutes - January 2025",
+                  date: "January 2025",
+                  type: "Governance"
+                }, {
+                  title: "Annual Accounts 2024",
+                  date: "December 2024",
+                  type: "Financial"
+                }, {
+                  title: "Building Insurance Certificate",
+                  date: "April 2024",
+                  type: "Legal"
+                }].map((doc, index) => <div key={index} className="flex items-center justify-between p-4 bg-card rounded-lg border border-border hover:border-primary/30 transition-colors">
                       <div className="flex items-center gap-4">
                         <FileText className="h-5 w-5 text-muted-foreground" />
                         <div>
@@ -340,8 +334,7 @@ const Leaseholders = () => {
                         <Download className="h-4 w-4 mr-2" />
                         Download
                       </Button>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
 
                 <Button variant="outline" className="mt-6">
@@ -356,16 +349,14 @@ const Leaseholders = () => {
                 <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
                 
                 <Accordion type="single" collapsible className="w-full">
-                  {faqs.map((faq, index) => (
-                    <AccordionItem key={index} value={`faq-${index}`}>
+                  {faqs.map((faq, index) => <AccordionItem key={index} value={`faq-${index}`}>
                       <AccordionTrigger className="text-left">
                         {faq.question}
                       </AccordionTrigger>
                       <AccordionContent className="text-muted-foreground">
                         {faq.answer}
                       </AccordionContent>
-                    </AccordionItem>
-                  ))}
+                    </AccordionItem>)}
                 </Accordion>
 
                 <div className="mt-8 p-6 bg-secondary/50 rounded-lg">
@@ -384,8 +375,6 @@ const Leaseholders = () => {
           </Tabs>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default Leaseholders;
