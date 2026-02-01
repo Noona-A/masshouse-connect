@@ -100,6 +100,63 @@ export type Database = {
         }
         Relationships: []
       }
+      meter_readings: {
+        Row: {
+          additional_notes: string | null
+          admin_notes: string | null
+          completed_by: string | null
+          created_at: string
+          email: string
+          flat_number: string
+          id: string
+          meter_type: string
+          phone: string | null
+          preferred_date: string | null
+          reading_value: string | null
+          reference_number: string
+          resident_name: string
+          scheduled_date: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          additional_notes?: string | null
+          admin_notes?: string | null
+          completed_by?: string | null
+          created_at?: string
+          email: string
+          flat_number: string
+          id?: string
+          meter_type: string
+          phone?: string | null
+          preferred_date?: string | null
+          reading_value?: string | null
+          reference_number: string
+          resident_name: string
+          scheduled_date?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          additional_notes?: string | null
+          admin_notes?: string | null
+          completed_by?: string | null
+          created_at?: string
+          email?: string
+          flat_number?: string
+          id?: string
+          meter_type?: string
+          phone?: string | null
+          preferred_date?: string | null
+          reading_value?: string | null
+          reference_number?: string
+          resident_name?: string
+          scheduled_date?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       parking_bookings: {
         Row: {
           admin_notes: string | null
@@ -228,6 +285,7 @@ export type Database = {
         Returns: boolean
       }
       generate_issue_reference: { Args: never; Returns: string }
+      generate_meter_reference: { Args: never; Returns: string }
       generate_parking_reference: { Args: never; Returns: string }
       has_role: {
         Args: {
