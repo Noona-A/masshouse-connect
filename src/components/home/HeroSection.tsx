@@ -2,15 +2,12 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Wrench, PoundSterling, Phone } from "lucide-react";
 import buildingsImage from "@/assets/buildings.jpg";
-
 const HeroSection = () => {
-  return (
-    <section className="relative min-h-[600px] flex items-center overflow-hidden">
+  return <section className="relative min-h-[600px] flex items-center overflow-hidden">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${buildingsImage})` }}
-      />
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+      backgroundImage: `url(${buildingsImage})`
+    }} />
       {/* Overlay */}
       <div className="absolute inset-0 bg-primary/80" />
       
@@ -19,16 +16,11 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight">
             Masshouse RTM Company Limited
           </h1>
-          <p className="mt-6 text-xl md:text-2xl text-primary-foreground/90 font-light">
-            Resident-Led Property Management
-          </p>
-          <p className="mt-2 text-lg text-primary-foreground/80">
-            336 Homes • 2 Buildings • Professional Service
-          </p>
+          <p className="mt-6 text-xl md:text-2xl text-primary-foreground/90 font-light">Leaseholder-Led Property Management</p>
+          <p className="mt-2 text-lg text-primary-foreground/80">336 Apartments</p>
           
           {/* Location Badge */}
-          <div className="mt-6 inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-primary-foreground/90">
-            <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+          <div className="mt-6 inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-primary-foreground/90">2 & 7 Masshouse Plaza, Birmingham<span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
             Masshouse Plaza, Birmingham • Near HS2
           </div>
 
@@ -55,8 +47,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
