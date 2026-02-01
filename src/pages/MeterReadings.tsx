@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import { Gauge, CheckCircle } from "lucide-react";
 
 const formSchema = z.object({
@@ -29,6 +30,7 @@ type FormData = z.infer<typeof formSchema>;
 
 const MeterReadings = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [referenceNumber, setReferenceNumber] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -48,18 +50,48 @@ const MeterReadings = () => {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     
-    // Simulate submission - in production this would call an edge function
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    console.log("Meter reading request submitted:", data);
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    toast({
-      title: "Request Submitted",
-      description: "Your meter reading request has been received. We'll be in touch soon.",
-    });
+    try {
+      const { data: result, error } = await supabase.functions.invoke('submit-meter-reading', {
+        body: {
+          residentName: data.residentName,
+          flatNumber: data.flatNumber,
+          email: data.email,
+          phone: data.phone || undefined,
+          meterType: data.meterType,
+          preferredDate: data.preferredDate || undefined,
+          additionalNotes: data.additionalNotes || undefined,
+        },
+      });
+
+      if (error) {
+        console.error('Error submitting meter reading:', error);
+        toast({
+          title: "Submission Failed",
+          description: "There was an error submitting your request. Please try again.",
+          variant: "destructive",
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
+      console.log("Meter reading request submitted:", result);
+      setReferenceNumber(result.referenceNumber);
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      
+      toast({
+        title: "Request Submitted",
+        description: "Your meter reading request has been received.",
+      });
+    } catch (error) {
+      console.error('Unexpected error:', error);
+      toast({
+        title: "Submission Failed",
+        description: "An unexpected error occurred. Please try again.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -77,10 +109,15 @@ const MeterReadings = () => {
                   <CheckCircle className="h-8 w-8 text-primary" />
                 </div>
                 <h2 className="text-2xl font-bold mb-4">Request Submitted Successfully</h2>
-                <p className="text-muted-foreground mb-6">
-                  Thank you for your meter reading request. Our team will process your request and contact you to arrange a suitable time.
+                <p className="text-lg font-medium text-primary mb-2">
+                  Reference: {referenceNumber}
                 </p>
-                <Button onClick={() => setIsSubmitted(false)}>Submit Another Request</Button>
+                <p className="text-muted-foreground mb-6">
+                  Thank you for your meter reading request. Our team will process your request and contact you to arrange a suitable time. Please save your reference number.
+                </p>
+                <Button onClick={() => { setIsSubmitted(false); setReferenceNumber(""); form.reset(); }}>
+                  Submit Another Request
+                </Button>
               </CardContent>
             </Card>
           </div>

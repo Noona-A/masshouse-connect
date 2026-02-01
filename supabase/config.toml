@@ -1,1 +1,13 @@
 project_id = "phxmgpknnfjptexwdhks"
+
+[functions.check-issue-status]
+verify_jwt = false
+
+[functions.submit-issue]
+verify_jwt = false
+
+[functions.submit-parking-booking]
+verify_jwt = false
+
+[functions.submit-meter-reading]
+verify_jwt = false

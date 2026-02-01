@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Loader2, LogOut, AlertTriangle, Car, ClipboardList, Users } from "lucide-react";
+import { Loader2, LogOut, AlertTriangle, Car, ClipboardList, Users, Gauge } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import AdminIssuesTab from "@/components/admin/AdminIssuesTab";
 import AdminParkingTab from "@/components/admin/AdminParkingTab";
+import AdminMeterReadingsTab from "@/components/admin/AdminMeterReadingsTab";
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ const AdminDashboard = () => {
   const [stats, setStats] = useState({
     openIssues: 0,
     pendingBookings: 0,
+    pendingMeterReadings: 0,
     resolvedThisWeek: 0,
     approvedThisWeek: 0,
   });
@@ -74,6 +76,12 @@ const AdminDashboard = () => {
       .select("*", { count: "exact", head: true })
       .eq("status", "pending");
 
+    // Get pending meter readings count
+    const { count: pendingMeterReadings } = await supabase
+      .from("meter_readings")
+      .select("*", { count: "exact", head: true })
+      .eq("status", "pending");
+
     // Get resolved issues this week
     const { count: resolvedThisWeek } = await supabase
       .from("issues")
@@ -91,6 +99,7 @@ const AdminDashboard = () => {
     setStats({
       openIssues: openIssues || 0,
       pendingBookings: pendingBookings || 0,
+      pendingMeterReadings: pendingMeterReadings || 0,
       resolvedThisWeek: resolvedThisWeek || 0,
       approvedThisWeek: approvedThisWeek || 0,
     });
@@ -130,7 +139,7 @@ const AdminDashboard = () => {
 
       <main className="container mx-auto px-4 py-8">
         {/* Stats Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
           <Card>
             <CardHeader className="pb-2">
               <CardDescription>Open Issues</CardDescription>
@@ -146,6 +155,15 @@ const AdminDashboard = () => {
               <CardTitle className="text-3xl flex items-center gap-2">
                 <Car className="h-6 w-6 text-blue-500" />
                 {stats.pendingBookings}
+              </CardTitle>
+            </CardHeader>
+          </Card>
+          <Card>
+            <CardHeader className="pb-2">
+              <CardDescription>Pending Meter Readings</CardDescription>
+              <CardTitle className="text-3xl flex items-center gap-2">
+                <Gauge className="h-6 w-6 text-amber-500" />
+                {stats.pendingMeterReadings}
               </CardTitle>
             </CardHeader>
           </Card>
@@ -188,12 +206,22 @@ const AdminDashboard = () => {
                   <Car className="h-4 w-4 mr-2" />
                   Parking Bookings
                 </TabsTrigger>
+                <TabsTrigger 
+                  value="meter-readings"
+                  className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent"
+                >
+                  <Gauge className="h-4 w-4 mr-2" />
+                  Meter Readings
+                </TabsTrigger>
               </TabsList>
               <TabsContent value="issues" className="p-6">
                 <AdminIssuesTab onUpdate={loadStats} />
               </TabsContent>
               <TabsContent value="parking" className="p-6">
                 <AdminParkingTab onUpdate={loadStats} />
+              </TabsContent>
+              <TabsContent value="meter-readings" className="p-6">
+                <AdminMeterReadingsTab onUpdate={loadStats} />
               </TabsContent>
             </Tabs>
           </CardContent>
