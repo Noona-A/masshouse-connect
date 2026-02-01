@@ -9,51 +9,19 @@ import { Button } from "@/components/ui/button";
 const newsItems = [
   {
     id: 1,
-    title: "Welcome to the New Masshouse RTM Website",
-    date: "2025-01-15",
-    category: "General",
-    excerpt: "We're excited to launch our new website, providing residents with easy access to important information, documents, and services. The site has been designed with you in mind.",
-    content: "Full article content would go here..."
+    title: "Handover Discussion Meeting Scheduled",
+    date: "2026-01-13",
+    category: "Meeting",
+    excerpt: "A crucial meeting has been scheduled between the freeholder, management agent, RTM directors, and solicitors to discuss the granting of Right to Manage and the timeline for handover.",
+    content: "Following the service of our claim notice in September, we have arranged a meeting on January 13th, 2026, to discuss the next steps in our Right to Manage application. The meeting will bring together all key parties including the freeholder, current managing agents, RTM directors, and legal representatives. The primary focus will be to confirm whether the Right to Manage has been granted and to establish a clear timeline for the handover of management responsibilities. This represents a significant milestone in our journey towards resident-led management of Masshouse and The Hive buildings. We will update all residents following the meeting with confirmed details of the handover process and timeline."
   },
   {
     id: 2,
-    title: "Board Meeting Summary - January 2025",
-    date: "2025-01-20",
-    category: "Meeting",
-    excerpt: "Key decisions from our latest board meeting including security improvements, budget approval for 2025, and updates on ongoing works.",
-    content: "Full article content would go here..."
-  },
-  {
-    id: 3,
-    title: "Planned Security Enhancement Coming March 2025",
-    date: "2025-01-18",
-    category: "Works",
-    excerpt: "We're working on improving security coverage across both buildings with additional CCTV cameras and improved access control systems.",
-    content: "Full article content would go here..."
-  },
-  {
-    id: 4,
-    title: "Reminder: Service Charge Due February 1st",
-    date: "2025-01-10",
+    title: "Right to Manage Claim Notice Served",
+    date: "2025-09-18",
     category: "Notice",
-    excerpt: "This is a reminder that service charges for the upcoming period are due on February 1st. Please ensure payment is made on time.",
-    content: "Full article content would go here..."
-  },
-  {
-    id: 5,
-    title: "Annual General Meeting - Date Announced",
-    date: "2025-01-05",
-    category: "Meeting",
-    excerpt: "The AGM has been scheduled for April 2025. All RTM members are encouraged to attend. Formal notice will follow.",
-    content: "Full article content would go here..."
-  },
-  {
-    id: 6,
-    title: "Car Park Lighting Upgrade Complete",
-    date: "2024-12-20",
-    category: "Works",
-    excerpt: "The underground car park lighting has been upgraded to energy-efficient LED lighting, improving visibility and reducing energy costs.",
-    content: "Full article content would go here..."
+    excerpt: "The RTM Company has formally served the claim notice for Right to Manage on all relevant parties, marking a significant step forward in our campaign.",
+    content: "On September 18th, 2025, the Masshouse RTM Company formally served the claim notice for Right to Manage on all leaseholders, the freeholder, landlords, and managing agents. This is a major milestone in our campaign to take control of the management of Masshouse and The Hive buildings. The claim notice sets out our legal right under the Commonhold and Leasehold Reform Act 2002 to assume responsibility for the management of the buildings. All parties have now been formally notified and the statutory process is underway. This notice represents the culmination of extensive preparation and consultation with residents, and marks the beginning of the formal Right to Manage acquisition process. We will keep all residents informed as the process progresses and look forward to delivering improved management services for our community."
   },
 ];
 
