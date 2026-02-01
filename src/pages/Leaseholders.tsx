@@ -47,7 +47,7 @@ const importantDates = [{
 }, {
   date: "To be decided",
   event: "Service Charge Due",
-  note: "Bi-annual payments"
+  note: "Quarterly payments"
 }, {
   date: "To be decided",
   event: "Annual General Meeting",
@@ -142,7 +142,8 @@ const Leaseholders = () => {
                   <p className="text-muted-foreground mb-4">
                     Service charge rates vary by apartment size and location. Please refer to your service charge demand letter or contact Moonstone Block Management for your specific amount.
                   </p>
-                  <p className="text-sm text-muted-foreground">Payment Schedule: Quarterly billing<strong>Payment Schedule:</strong> Bi-annual (1st April and 1st October)
+                  <p className="text-sm text-muted-foreground">
+                    <strong>Payment Schedule:</strong> Quarterly billing
                   </p>
                 </div>
               </div>
@@ -196,7 +197,7 @@ const Leaseholders = () => {
                     <li>Log into your online banking</li>
                     <li>Navigate to "Payments" or "Standing Orders"</li>
                     <li>Enter the bank details above</li>
-                    <li>Set amount (your monthly or bi-annual payment)</li>
+                    <li>Set amount (your quarterly payment)</li>
                     <li>Choose payment date (before the due date)</li>
                     <li>Use your flat number as the reference</li>
                   </ol>
