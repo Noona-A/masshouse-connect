@@ -236,8 +236,8 @@ const ReportIssue = () => {
                 <div className="bg-muted rounded-lg p-4 text-sm text-muted-foreground">
                   <p>
                     <strong>💡 Tip:</strong> If you have photos of the issue, please email them separately to{" "}
-                    <a href="mailto:issues@masshouse-rtm.co.uk" className="text-primary hover:underline">
-                      issues@masshouse-rtm.co.uk
+                    <a href="mailto:support@masshousertm.co.uk" className="text-primary hover:underline">
+                      support@masshousertm.co.uk
                     </a>{" "}
                     after submitting this form, referencing your flat number.
                   </p>

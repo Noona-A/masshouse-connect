@@ -13,7 +13,7 @@ const newsItems = [
     date: "2026-01-13",
     category: "Meeting",
     excerpt: "A crucial meeting has been scheduled between the freeholder, management agent, RTM directors, and solicitors to discuss the granting of Right to Manage and the timeline for handover.",
-    content: "Following the service of our claim notice in September, we have arranged a meeting on January 13th, 2026, to discuss the next steps in our Right to Manage application. The meeting will bring together all key parties including the freeholder, current managing agents, RTM directors, and legal representatives. The primary focus will be to confirm whether the Right to Manage has been granted and to establish a clear timeline for the handover of management responsibilities. This represents a significant milestone in our journey towards resident-led management of Masshouse and The Hive buildings. We will update all residents following the meeting with confirmed details of the handover process and timeline."
+    content: "Following the service of our claim notice in September, we have arranged a meeting on January 13th, 2026, to discuss the next steps in our Right to Manage application. The meeting will bring together all key parties including the freeholder, current managing agents, RTM directors, and legal representatives. The primary focus will be to confirm whether the Right to Manage has been granted and to establish a clear timeline for the handover of management responsibilities. This represents a significant milestone in our journey towards leaseholder-led management of Masshouse and The Hive buildings. We will update all residents following the meeting with confirmed details of the handover process and timeline."
   },
   {
     id: 2,

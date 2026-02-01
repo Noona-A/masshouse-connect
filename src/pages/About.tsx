@@ -32,7 +32,7 @@ const About = () => {
     <Layout>
       <PageHero
         title="About Masshouse RTM"
-        subtitle="Understanding resident-led property management"
+        subtitle="Understanding leaseholder-led property management"
         breadcrumbs={[
           { label: "Home", path: "/" },
           { label: "About" },

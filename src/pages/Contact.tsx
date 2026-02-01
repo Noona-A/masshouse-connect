@@ -3,10 +3,10 @@ import PageHero from "@/components/ui/PageHero";
 import { Building, Users, AlertTriangle, Phone, Mail, Clock, MapPin, ExternalLink } from "lucide-react";
 
 const directors = [
-  { name: "Director Name", role: "Chair", email: "chair@masshouse-rtm.co.uk" },
-  { name: "Director Name", role: "Treasurer", email: "treasurer@masshouse-rtm.co.uk" },
-  { name: "Director Name", role: "Secretary", email: "secretary@masshouse-rtm.co.uk" },
-  { name: "Director Name", role: "Director", email: "director@masshouse-rtm.co.uk" },
+  { name: "Director Name", role: "Chair", email: "support@masshousertm.co.uk" },
+  { name: "Director Name", role: "Treasurer", email: "support@masshousertm.co.uk" },
+  { name: "Director Name", role: "Secretary", email: "support@masshousertm.co.uk" },
+  { name: "Director Name", role: "Director", email: "support@masshousertm.co.uk" },
 ];
 
 const emergencyServices = [

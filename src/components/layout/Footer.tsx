@@ -21,7 +21,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold mb-4">MASSHOUSE RTM</h3>
             <p className="text-primary-foreground/80 text-sm leading-relaxed mb-4">
-              Resident-led property management for 336 apartments at Masshouse Plaza, Birmingham.
+              Leaseholder-led property management for 336 apartments at Masshouse Plaza, Birmingham.
             </p>
             <div className="flex items-start gap-2 text-sm text-primary-foreground/80">
               <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
