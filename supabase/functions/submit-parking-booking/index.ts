@@ -95,6 +95,36 @@ Deno.serve(async (req) => {
       );
     }
 
+    // Send confirmation email
+    try {
+      const emailResponse = await fetch(
+        `${supabaseUrl}/functions/v1/send-email`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${supabaseServiceKey}`,
+          },
+          body: JSON.stringify({
+            to: resident_email,
+            type: "parking_confirmation",
+            data: {
+              resident_name,
+              booking_reference,
+              guest_name,
+              vehicle_registration: vehicle_registration.toUpperCase(),
+              start_time: new Date(start_time).toLocaleString("en-GB"),
+              end_time: new Date(end_time).toLocaleString("en-GB"),
+            },
+          }),
+        }
+      );
+      const emailResult = await emailResponse.json();
+      console.log("Email sent:", emailResult);
+    } catch (emailError) {
+      console.error("Failed to send email:", emailError);
+    }
+
     return new Response(
       JSON.stringify({ 
         success: true, 

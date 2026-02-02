@@ -84,6 +84,37 @@ Deno.serve(async (req) => {
       notes: "Issue reported by resident",
     });
 
+    // Send confirmation email
+    try {
+      const emailResponse = await fetch(
+        `${supabaseUrl}/functions/v1/send-email`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${supabaseServiceKey}`,
+          },
+          body: JSON.stringify({
+            to: resident_email,
+            type: "issue_confirmation",
+            data: {
+              resident_name,
+              flat_number,
+              reference_number,
+              location,
+              category,
+              issue_type,
+            },
+          }),
+        }
+      );
+      const emailResult = await emailResponse.json();
+      console.log("Email sent:", emailResult);
+    } catch (emailError) {
+      console.error("Failed to send email:", emailError);
+      // Don't fail the request if email fails
+    }
+
     return new Response(
       JSON.stringify({ 
         success: true, 

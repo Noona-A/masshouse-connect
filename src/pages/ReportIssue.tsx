@@ -15,6 +15,7 @@ import {
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { AlertTriangle, Phone, CheckCircle } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const ReportIssue = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -25,19 +26,41 @@ const ReportIssue = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    const formData = new FormData(e.currentTarget);
     
-    // Generate a reference number
-    const ref = `MH${Date.now().toString().slice(-6)}`;
-    setReferenceNumber(ref);
-    setSubmitted(true);
-    setIsSubmitting(false);
-    
-    toast({
-      title: "Issue Reported",
-      description: `Reference: ${ref}`,
-    });
+    try {
+      const { data, error } = await supabase.functions.invoke("submit-issue", {
+        body: {
+          resident_name: formData.get("name"),
+          flat_number: formData.get("flat"),
+          resident_email: formData.get("email"),
+          resident_phone: formData.get("phone") || null,
+          issue_type: formData.get("urgency"),
+          location: formData.get("location"),
+          category: formData.get("category"),
+          description: formData.get("description"),
+        },
+      });
+
+      if (error) throw error;
+
+      setReferenceNumber(data.reference_number);
+      setSubmitted(true);
+      
+      toast({
+        title: "Issue Reported",
+        description: `Reference: ${data.reference_number}`,
+      });
+    } catch (error) {
+      console.error("Error submitting issue:", error);
+      toast({
+        title: "Error",
+        description: "Failed to submit issue. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted) {

@@ -91,6 +91,35 @@ serve(async (req) => {
 
     console.log('Meter reading request submitted successfully:', data);
 
+    // Send confirmation email
+    try {
+      const emailResponse = await fetch(
+        `${supabaseUrl}/functions/v1/send-email`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${supabaseServiceKey}`,
+          },
+          body: JSON.stringify({
+            to: body.email,
+            type: "meter_confirmation",
+            data: {
+              resident_name: body.residentName,
+              flat_number: body.flatNumber,
+              reference_number: referenceNumber,
+              meter_type: body.meterType,
+              preferred_date: body.preferredDate || "",
+            },
+          }),
+        }
+      );
+      const emailResult = await emailResponse.json();
+      console.log("Email sent:", emailResult);
+    } catch (emailError) {
+      console.error("Failed to send email:", emailError);
+    }
+
     return new Response(
       JSON.stringify({ 
         success: true, 
