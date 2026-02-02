@@ -3,6 +3,9 @@ project_id = "phxmgpknnfjptexwdhks"
 [functions.check-issue-status]
 verify_jwt = false
 
+[functions.send-email]
+verify_jwt = false
+
 [functions.submit-issue]
 verify_jwt = false
 
